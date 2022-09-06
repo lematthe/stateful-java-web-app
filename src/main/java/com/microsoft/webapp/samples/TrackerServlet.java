@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.net.InetAddress;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -92,6 +93,7 @@ public class TrackerServlet extends HttpServlet {
         out.println("Session Last Access Time = " + new Date(session.getLastAccessedTime())
                 + "<br>");
         out.println("Your IP Address = " + request.getRemoteAddr() + "<br>");
+        out.println("Current Server = "+ InetAddress.getLocalHost().getHostName() + "<br>");
 
         StringBuffer buffer = new StringBuffer();
         buffer.append("<br>");
